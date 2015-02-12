@@ -1,0 +1,5 @@
+Crystal structure prediction of PtRu_{1-x}N_x --> NEXAFS spectra
+prediction.
+    -- use NEXAFS spectra match as fitness function?
+
+Postdoc, NREL
