@@ -4,10 +4,7 @@
 * methanol economy better than hydrogen
 * incremental market introduction
 * target energy density (volumetric & gravimetric)
-* address <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <mn>C</mn>
-        <msub><mn>O</mn><mn>2</mn></msub>
-    </math>
+* address $\mathrm{CO_2}$
 
 ## Task assignment
 * manufacturing: PGI
@@ -19,32 +16,37 @@
 
 *Opening Line* Since their inception 25 years ago, direct methanol fuel cells have struggled to live up to the promise evident in a renewable fuel source that carries ten times the energy density of compressed hydrogen and fifteen times that of lithium ion batteries. With developments in membrane and catalyst technologies, this is poised to change.
 
-Despite their strengths, all fuel cells -- including direct methanol -- suffer from intrinsic electrochemical limitations to their use as stand-alone power supplies. Sluggish kinetics and chemical, mass transport, and ohmic polarization losses impede their ability to promptly respond to changes in power demand and result in a narrow power band, respectively.
+Despite their strengths, all fuel cells -- including direct methanol -- suffer from intrinsic electrochemical limitations to their use as stand-alone power supplies. Sluggish kinetics and chemical, mass transport, and ohmic polarization losses impede their ability to promptly respond to changes in power demand and result in a narrow optimal operating range, respectively.
 
 Where fuel cells fall short, batteries excel. Their ability to respond instantly to changing power demands and their wide power band, extending over several orders-of-magnitude in their operational C-rate, is a succor for the problems facing fuel cells. However, even state-of-the-art lithium ion batteries fall well short of the energy density available from methanol.
 
 We propose a hybrid battery-fuel cell power system that joins the energy density and generation properties of a fuel cell with the power response of batteries; leveraging the strengths of the one in support of the weaknesses of the other.
 
-Such a system also provides an important flexibility in design. Under the paradigm of this hybrid power-system, the average power demand, $\langle \mathrm{power} \rangle \times \textrm{duty cycle}$, dictates the power capacity of the fuel cell, while deviation from this average dictates the capacity of the battery. Designs that minimize these fluctuations, and improvements in electrochemical energy storage serve to reduce the weight, and volume, of the battery: a volume that can be repurposed to provide more fuel. At fifteen times greater energy density, combining energy generation and energy storage leverages developments in either into a capacity multiplier.
+Such a system provides an important flexibility in design. Under the paradigm of this hybrid power-system, the average power demand, $\langle \mathrm{power} \rangle \times \textrm{duty cycle}$, dictates the power capacity of the fuel cell, while deviation from this average dictates the battery capacity. Designs that minimize these power fluctuations, and improvements in electrochemical energy storage serve to reduce the weight, and volume, of the battery: a volume that can be repurposed to provide more fuel. At fifteen times greater energy density, combining energy generation and energy storage leverages developments in either into a capacity multiplier.
 
-<!-- The choice of fuel cell and battery technologies are an optimization that requires careful consideration of application-specific demands. --!>
+<!-- The choice of fuel cell and battery technologies are an optimization that requires careful consideration of application-specific demands. -->
 
 This project will focus on the low-to-mid-level power requirements of portable power, with near-term implications in the transportation (EV) market.
 
 ### Fuel Cell
-There are many fuel cell technologies available: hydrogen, direct alcohol, molten carbonate, solid oxide.
+The first reported fuel cell dates back to work by W.R. Grove in 1838 [(Grove1838)][Grove1838], who a year later, introduces platinum to catalyze the hydrogen oxidation and oxygen reduction reactions [(Grove1839)][Grove1839].
+
+Since then, many fuel cell techologies have been developed, and are frequently categorized by their electrolyte, e.g. PEM (proton exchange membrane, or polymer electrolyte membrane), phosphoric acid, molten carbonate, and solid oxide fuel.
 
 The scalability of fuel cells decouples power and energy capacity.
 
 * Type of fuel cell
 
-    * low T: hydrogen, direct methanol, set fuel type, but more efficient for both small scale and intermittent applications.
-    
-    * high T: molten carbonate, solid oxide, flexible fuel, but inefficient for small scale and intermittent applications.
-    
+    * low T (< 100 &deg;C): hydrogen, direct methanol, set fuel type, but more efficient for both small scale and intermittent applications.
+
+    * mid T (150-200 &deg;C): phosphoric acid suffers low power density and a corrosive electrolyte.
+
+    * high T (> 600 &deg;C): molten carbonate, solid oxide, flexible fuel, but inefficient for small scale and intermittent applications.
+
 * Hydrogen vs. methanol
 
-    * Methanol and hydrogen have comparable energy capacities. [(Arico2009)][Arico2009]  
+    * Methanol and hydrogen have comparable energy capacities [(Arico2009)][Arico2009].  
+
     <table>
         <tr>
             <th>Fuel</th>
@@ -66,11 +68,12 @@ The scalability of fuel cells decouples power and energy capacity.
             <td>1839 - 2317</td>
             <td>25,316 - 33,172</td>
         </tr>
-    </table>  
+    </table>
+
     Although liquid hydrogen provides the largest gravimetric capacity, this is overshadowed by the balance of plant structures required for cryogenic storage (reference?). Methanol has a 75.5% higher energy density than cryogenic hydrogen and a negligible intrinsic requirement for fuel storage.
-    
+
     * Existing manufacturing, distribution, and point-of-sale infrastructure can be easily, and incrementally, converted from gasoline/diesel to methanol. Hydrogen could not.
-    
+
     * Currently, (fraction?) methanol is produced by steam reforming methane (reference?). However unlike other higher order alcohols, technologies exist at a technological readiness level of XX for the commercial production of methanol from biomass. Thus, the use of methanol would result in the closed cycle production, distribution, and reclamation of carbon, resulting in a carbon-neutral fuel source.
 
 For these reasons, this work will focus on the integration of direct methanol fuel cells as the power generator.
@@ -78,7 +81,7 @@ For these reasons, this work will focus on the integration of direct methanol fu
 ### Batteries
 There are many energy storage options: lithium ion, magnesium ion, redox flow, supercapacitors. (Expand discussion on the down selection from these to lithium ion batteries.)
 
-With volumetric energy densities between 256 and 394 Wh/L and specific energies between 86 and 147 Wh/kg,[(Arico2009)][Arico2009] lithium ion batteries have energy capacities and kinetics sufficient to handle fluctuations in power demands.
+With volumetric energy densities between 256 and 394 Wh/L and specific energies between 86 and 147 Wh/kg [(Arico2009)][Arico2009], lithium ion batteries have energy capacities and kinetics sufficient to handle fluctuations in power demands.
 
 The use of liquid electrolytes in lithium ion battery chemistries increases the complexity of battery design and are involved in numerous unsafe redox reactions, particularly at overcharged and undercharged conditions. Solid state lithium ion batteries do not suffer from operational limitations that plague these chemistries.
 
@@ -86,9 +89,33 @@ A hybrid power systems ensures the battery remain within the broad window for op
 
 For these reasons, this work will focus on integration of solid state lithium ion batteries as the power storage medium.
 
-## References
-(Arico2009) Aric&ograve;, A., Baglio, V. & Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009)
+### Conclusion
+A fuel cell-electrochemical energy storage hybrid power system is not a new concept, e.g. [(Glauchia2011)][Glauchia2011]; they have been incorporated into concept vehicles produced by several automobile manufacturers, and in May 2008, [Boeing reported][Boeing2008] on the successful test flight of the Demonstrator Airplane, which combined a proton exchange membrane fuel cell system *-- used to power the aircraft at a cruise speed of 60 mph --(drop?)* with a lightweight battery that provided additional power for takeoff. Commercial hybrid power systems have a place, but these examples show that prohibitive limitations persist in battery/hydrogen fuel cell systems, prompting our proposed move to methanol.
+
+This project will leverage recent advancements in membrane and catalyst technology to increase the performance of direct methanol fuel cells; advance solid state lithium ion battery systems to lower battery weight, improve safety, and exploit the capacity multiplier effect of a hybrid system; and finally, advance the technological readiness level of this technology toward commercialization.
+
+### Personnel
+
+### References
+[Aric&ograve;, A., Baglio, V. & Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009).][Arico2009]
+
+[Koehler, T. Boeing makes history with flights of Fuel Cell Demonstrator Airplane, Boeing Frontiers (May 2008) 44. Accessed 12 February 2015][Boeing2008]
+
+[Gauchia, L., Bouscayrol, a., Sanz, J., Trigui, R. & Barrade, P. Fuel cell, battery and supercapacitor hybrid system for electric vehicle: Modeling and control via energetic macroscopic representation. 2011 IEEE Veh. Power Propuls. Conf. 1–6 (2011).][Glauchia2011]
+
+[Grove, W. R. A New Voltaic Combination. London Edinburgh Philos. Mag. J. Sci. 13, 430–431 (1838).][Grove1838]
+
+[Grove, W. R. Voltaic Series and the Combination of Gases by Platinum. London Edinburgh Philos. Mag. J. Sci. 14, 127–130 (1839).][Grove1839]
+
 [Arico2009]: http://books.google.com/books?hl=en&lr=&id=xHsJJieZlHwC&oi=fnd&pg=PA1&dq=Direct+Methanol+Fuel+Cells+:+History+,+Status+and+Perspectives&ots=iDVDBBaEl5&sig=BtotK4fVYetE5w_cc2AigTz2Dnk "Aric&ograve;, A., Baglio, V. & Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009)."
+
+[Boeing2008]: http://www.boeing.com/news/frontiers/archive/2008/may/ts_sf04.pdf "Koehler, T. Boeing makes history with flights of Fuel Cell Demonstrator Airplane, Boeing Frontiers (May 2008) 44. Accessed 12 February 2015"
+
+[Glauchia2011]: http://dx.doi.org/10.1109/VPPC.2011.6043246 "Gauchia, L., Bouscayrol, a., Sanz, J., Trigui, R. & Barrade, P. Fuel cell, battery and supercapacitor hybrid system for electric vehicle: Modeling and control via energetic macroscopic representation. 2011 IEEE Veh. Power Propuls. Conf. 1–6 (2011)."
+
+[Grove1838]: https://archive.org/details/londonedinburghp13lond "Grove, W. R. A New Voltaic Combination. London Edinburgh Philos. Mag. J. Sci. 13, 430–431 (1838)."
+
+[Grove1839]: https://archive.org/details/londonedinburghp143lond "Grove, W. R. Voltaic Series and the Combination of Gases by Platinum. London Edinburgh Philos. Mag. J. Sci. 14, 127–130 (1839)."
 
 # Notes
 
@@ -148,14 +175,8 @@ Several technical challenges prevent immediate implementation of a HBFC...
 	* Ohmic
 	* electrochemical
 	* catalytic
-* <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <msub><mn>H</mn><mn>2</mn></msub>
-        <mn>O</mi>
-    </math> management
-* DC electronics require
-    <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <mn>V</mn><mo>&ge;</mo><mn>1 V</mn>
-    </math>
+* $\mathrm{H_2O}$ management
+* DC electronics require $V > 1~V$
 
 ### Battery
 * limited energy storage capacity
