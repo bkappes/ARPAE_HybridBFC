@@ -29,52 +29,65 @@ Such a system provides an important flexibility in design. Under the paradigm of
 This project will focus on the low-to-mid-level power requirements of portable power, with near-term implications in the transportation (EV) market.
 
 ### Fuel Cell
+The scalability of fuel cells decouples power and energy capacity, and enables use of fuels with very high energy densities.
+
 The first reported fuel cell dates back to work by W.R. Grove in 1838 [(Grove1838)][Grove1838], who a year later, introduces platinum to catalyze the hydrogen oxidation and oxygen reduction reactions [(Grove1839)][Grove1839].
 
-Since then, many fuel cell techologies have been developed, and are frequently categorized by their electrolyte, e.g. PEM (proton exchange membrane, or polymer electrolyte membrane), phosphoric acid, molten carbonate, and solid oxide fuel.
+Since then, many fuel cell technologies have been developed, and are frequently categorized by their electrolyte, e.g. PEM (proton exchange membrane, or polymer electrolyte membrane), phosphoric acid, molten carbonate, and solid oxide fuel. Practically, these may also be classified by the operating temperature.
 
-The scalability of fuel cells decouples power and energy capacity.
+Molten carbonate and solid oxide fuel cells require temperatures above 600 &deg;C to enable sufficient anion mobility, for $\mathrm{CO_3^{2-}}$ and $\mathrm{O^{2-}}$, respectively. These temperatures enable significant fuel flexibility without need for an external reformer and facilitates both the fuel oxidation and oxygen reduction reactions; however, system component longevity is a persistent problem at these elevated temperatures. Additionally, cyclic usage patterns result in thermal cycling that requires careful matching of thermal expansion coefficients for seals, anode, cathode, electrolyte, casing, etc., which severely limits materials options for these components. Finally, at these temperatures, heat loss varies inversely with system size. These constraints make high temperature fuel cells less attractive for portable applications.
 
-* Type of fuel cell
+At an operating temperature of 150-200 &deg;C, phosphoric acid fuel cells do not suffer from the same thermal management problems as high temperature fuel cells, but containing the highly corrosive electrolyte at elevated temperature limits longevity. To increase the capacity of these fuel cells by only 20% would require significant advancements in reducing anion adsorption at the low-index planes of the Pt catalyst [(Rimick2010a)][Rimick2010a], [(Mench2003)][Mench2003].
 
-    * low T (< 100 &deg;C): hydrogen, direct methanol, set fuel type, but more efficient for both small scale and intermittent applications.
+PEM operate below 100 &deg;C, which makes this class of fuel cells highly attractive for portable applications. The low temperature operation does limit both the chemical and mass transport kinetics, leading to appreciable polarization losses, but recent developments in membrane technology may significantly reduce both the mass transport polarization and the reduced operating potential that results from fuel crossover [(Tateishi2013)][Tateishi2013]. Furthermore, the low operating temperature miminizes thermal management concerns for portable applications, and reduces thermal energy losses associated with operation cycling.
 
-    * mid T (150-200 &deg;C): phosphoric acid suffers low power density and a corrosive electrolyte.
+Of the potential PEM fuels, compressed and liquid hydrogen have received significantly more attention.
 
-    * high T (> 600 &deg;C): molten carbonate, solid oxide, flexible fuel, but inefficient for small scale and intermittent applications.
+<figure>
+  <a href="fig/publication_count.png">
+      <img src="fig/publication_count.png" alt="publication count">
+  </a>
+  <figcaption>
+Number of publications that reference "hydrogen fuel cell" or "direct alcohol methanol fuel cell", according to *scholar.google.com*. Accessed: 12 February 2015.
+  </figcaption>
+</figure>
 
-* Hydrogen vs. methanol
+Unsurprisingly, then, hydrogen fuel cell technology is more developed; however, methanol has higher energy capacities [(Arico2009)][Arico2009].
 
-    * Methanol and hydrogen have comparable energy capacities [(Arico2009)][Arico2009].  
+<table>
+    <tr>
+        <th>Fuel</th>
+        <th>Energy Density<br>(Wh/L)</th>
+        <th>Specific Energy<br>(Wh/kg)</th>
+    </tr>
+    <tr>
+        <td>Methanol</td>
+        <td>3228 - 3976</td>
+        <td>5390 - 7122</td>
+    </tr>
+    <tr>
+        <td>hydrogen<br>(metal hydride)</td>
+        <td>1532 - 2339</td>
+        <td>374 - 635</td>
+    </tr>
+    <tr>
+        <td>hydrogen<br>(cryogenic liquid)</td>
+        <td>1839 - 2317</td>
+        <td>25,316 - 33,172</td>
+    </tr>
+</table>
 
-    <table>
-        <tr>
-            <th>Fuel</th>
-            <th>Energy Density<br>(Wh/L)</th>
-            <th>Specific Energy<br>(Wh/kg)</th>
-        </tr>
-        <tr>
-            <td>Methanol</td>
-            <td>3228 - 3976</td>
-            <td>5390 - 7122</td>
-        </tr>
-        <tr>
-            <td>hydrogen<br>(metal hydride)</td>
-            <td>1532 - 2339</td>
-            <td>374 - 635</td>
-        </tr>
-        <tr>
-            <td>hydrogen<br>(cryogenic liquid)</td>
-            <td>1839 - 2317</td>
-            <td>25,316 - 33,172</td>
-        </tr>
-    </table>
+Although liquid hydrogen provides the largest gravimetric capacity, this is overshadowed by the balance of plant structures required for cryogenic storage (reference?). Methanol has a 75.5% higher energy density than cryogenic hydrogen and a negligible intrinsic requirement for fuel storage.
 
-    Although liquid hydrogen provides the largest gravimetric capacity, this is overshadowed by the balance of plant structures required for cryogenic storage (reference?). Methanol has a 75.5% higher energy density than cryogenic hydrogen and a negligible intrinsic requirement for fuel storage.
+Existing manufacturing, distribution, and point-of-sale infrastructure can be easily, and incrementally, converted from gasoline/diesel to methanol. Hydrogen could not.
 
-    * Existing manufacturing, distribution, and point-of-sale infrastructure can be easily, and incrementally, converted from gasoline/diesel to methanol. Hydrogen could not.
+Currently, methanol is produced predominantly by steam reforming methane. However unlike other higher order alcohols, technologies exist at a sufficient technological readiness level for the commercial production of methanol from biomass.
 
-    * Currently, (fraction?) methanol is produced by steam reforming methane (reference?). However unlike other higher order alcohols, technologies exist at a technological readiness level of XX for the commercial production of methanol from biomass. Thus, the use of methanol would result in the closed cycle production, distribution, and reclamation of carbon, resulting in a carbon-neutral fuel source.
+> "While natural gas is most often used in the global economy, methanol has the distinct advantage of 'polygeneration' - whereby methanol can be made from any resource that can be converted first into synthesis gas. Through gasification, synthesis gas can be produced from anything that is or ever was a plant.  This includes biomass, agricultural and timber waste, solid municipal waste, and a number of other feedstocks."
+
+[methanol.org](http://www.methanol.org/methanol-basics/overview/how-is-methanol-made-.aspx), Accessed: 12 February 2015
+
+Thus, the use of methanol would result in the closed cycle production, distribution, and reclamation of carbon, resulting in a carbon-neutral, renewable fuel source.
 
 For these reasons, this work will focus on the integration of direct methanol fuel cells as the power generator.
 
@@ -107,6 +120,12 @@ This project will leverage recent advancements in membrane and catalyst technolo
 
 [Grove, W. R. Voltaic Series and the Combination of Gases by Platinum. London Edinburgh Philos. Mag. J. Sci. 14, 127–130 (1839).][Grove1839]
 
+[Mench, M. M. & Wang, C. Y. An In Situ Method for Determination of Current Distribution in PEM Fuel Cells Applied to a Direct Methanol Fuel Cell. J. Electrochem. Soc. 150, A79 (2003)][Mench2003]
+
+[Remick, R. & Wheeler, D. Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis. NREL/TP-560-49072 1–51 (2010). Accessed: 12 February 2015.][Rimick2010a]
+
+[Tateishi, H. et al. Graphene Oxide Fuel Cell. J. Electrochem. Soc. 160, F1175–F1178 (2013).][Tateishi2013]
+
 [Arico2009]: http://books.google.com/books?hl=en&lr=&id=xHsJJieZlHwC&oi=fnd&pg=PA1&dq=Direct+Methanol+Fuel+Cells+:+History+,+Status+and+Perspectives&ots=iDVDBBaEl5&sig=BtotK4fVYetE5w_cc2AigTz2Dnk "Aric&ograve;, A., Baglio, V. & Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009)."
 
 [Boeing2008]: http://www.boeing.com/news/frontiers/archive/2008/may/ts_sf04.pdf "Koehler, T. Boeing makes history with flights of Fuel Cell Demonstrator Airplane, Boeing Frontiers (May 2008) 44. Accessed 12 February 2015"
@@ -116,6 +135,12 @@ This project will leverage recent advancements in membrane and catalyst technolo
 [Grove1838]: https://archive.org/details/londonedinburghp13lond "Grove, W. R. A New Voltaic Combination. London Edinburgh Philos. Mag. J. Sci. 13, 430–431 (1838)."
 
 [Grove1839]: https://archive.org/details/londonedinburghp143lond "Grove, W. R. Voltaic Series and the Combination of Gases by Platinum. London Edinburgh Philos. Mag. J. Sci. 14, 127–130 (1839)."
+
+[Mench2003]: http://dx.doi.org/10.1149/1.1526108 "Mench, M. M. & Wang, C. Y. An In Situ Method for Determination of Current Distribution in PEM Fuel Cells Applied to a Direct Methanol Fuel Cell. J. Electrochem. Soc. 150, A79 (2003)"
+
+[Rimick2010a]: http://www1.eere.energy.gov/hydrogenandfuelcells/pdfs/49072.pdf "Remick, R. & Wheeler, D. Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis. NREL/TP-560-49072 1–51 (2010). Accessed: 12 February 2015."
+
+[Tateishi2013]: http://jes.ecsdl.org/cgi/doi/10.1149/2.008311jes "Tateishi, H. et al. Graphene Oxide Fuel Cell. J. Electrochem. Soc. 160, F1175–F1178 (2013)."
 
 # Notes
 
