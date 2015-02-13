@@ -1,165 +1,183 @@
-<h1 id="concept-paper">Concept paper</h1>
-<ul>
-<li>impact -- <em>disruptive</em></li>
-<li>figure</li>
-<li>methanol economy better than hydrogen</li>
-<li>incremental market introduction</li>
-<li>target energy density (volumetric &amp; gravimetric)</li>
-<li>address $\mathrm{CO_2}$</li>
-</ul>
-<h2 id="task-assignment">Task assignment</h2>
-<ul>
-<li>manufacturing: PGI</li>
-<li>battery development/selection: Chunmei</li>
-<li>Stabilize Pt:Ru catalyst: Steve</li>
-<li>Methanol concentration/crossover (MEA): Branden</li>
-</ul>
-<h2 id="outline-scratch">Outline/scratch</h2>
-<p><em>Opening Line</em> Since their inception 25 years ago, direct methanol fuel cells have struggled to live up to the promise evident in a renewable fuel source that carries ten times the energy density of compressed hydrogen and fifteen times that of lithium ion batteries. With developments in membrane and catalyst technologies, this is poised to change.</p>
+<h1 id="a-direct-methanol-fuel-cell-solid-state-lithium-ion-battery-hybrid-power-system-for-portable-applications">A Direct Methanol Fuel Cell-Solid State Lithium Ion Battery Hybrid Power System for Portable Applications</h1>
+<div align="center">
+  Branden B. Kappes<sup>1,2</sup>,
+  Cristian V. Ciobanu<sup>2</sup>,
+  Chunmei Ban<sup>3</sup>,
+  Steven Christensen<sup>3</sup>,
+  Katherine Hurst<sup>3</sup><br />
+  <sup>1</sup>Process Group International, Livermore, CA<br />
+  <sup>2</sup>Department of Mechanical Engineering, Colorado School of Mines, Golden, CO<br />
+  <sup>3</sup>National Renewable Energy Laboratory, Golden, CO
+</div>
+
+
+<h2 id="introduction">Introduction</h2>
+<p>Since their inception 25 years ago, direct methanol fuel cells have struggled to live up to the promise evident in a renewable fuel source that carries ten times the energy density of compressed hydrogen and fifteen times that of lithium ion batteries. With developments in membrane and catalyst technologies, this is poised to change.</p>
 <p>Despite their strengths, all fuel cells -- including direct methanol -- suffer from intrinsic electrochemical limitations to their use as stand-alone power supplies. Sluggish kinetics and chemical, mass transport, and ohmic polarization losses impede their ability to promptly respond to changes in power demand and result in a narrow optimal operating range, respectively.</p>
 <p>Where fuel cells fall short, batteries excel. Their ability to respond instantly to changing power demands and their wide power band, extending over several orders-of-magnitude in their operational C-rate, is a succor for the problems facing fuel cells. However, even state-of-the-art lithium ion batteries fall well short of the energy density available from methanol.</p>
 <p>We propose a hybrid battery-fuel cell power system that joins the energy density and generation properties of a fuel cell with the power response of batteries; leveraging the strengths of the one in support of the weaknesses of the other.</p>
 <p>Such a system provides an important flexibility in design. Under the paradigm of this hybrid power-system, the average power demand, $\langle \mathrm{power} \rangle \times \textrm{duty cycle}$, dictates the power capacity of the fuel cell, while deviation from this average dictates the battery capacity. Designs that minimize these power fluctuations, and improvements in electrochemical energy storage serve to reduce the weight, and volume, of the battery: a volume that can be repurposed to provide more fuel. At fifteen times greater energy density, combining energy generation and energy storage leverages developments in either into a capacity multiplier.</p>
 <!-- The choice of fuel cell and battery technologies are an optimization that requires careful consideration of application-specific demands. -->
 
+
 <p>This project will focus on the low-to-mid-level power requirements of portable power, with near-term implications in the transportation (EV) market.</p>
-<h3 id="fuel-cell">Fuel Cell</h3>
-<p>The scalability of fuel cells decouples power and energy capacity, and enables use of fuels with very high energy densities.</p>
-<p>The first reported fuel cell dates back to work by W.R. Grove in 1838 <a href="https://archive.org/details/londonedinburghp13lond" title="Grove, W. R. A New Voltaic Combination. London Edinburgh Philos. Mag. J. Sci. 13, 430&#x2013;431 (1838).">(Grove1838)</a>, who a year later, introduces platinum to catalyze the hydrogen oxidation and oxygen reduction reactions <a href="https://archive.org/details/londonedinburghp143lond" title="Grove, W. R. Voltaic Series and the Combination of Gases by Platinum. London Edinburgh Philos. Mag. J. Sci. 14, 127&#x2013;130 (1839).">(Grove1839)</a>.</p>
-<p>Since then, many fuel cell technologies have been developed, and are frequently categorized by their electrolyte, e.g. PEM (proton exchange membrane, or polymer electrolyte membrane), phosphoric acid, molten carbonate, and solid oxide fuel. Practically, these may also be classified by the operating temperature.</p>
-<p>Molten carbonate and solid oxide fuel cells require temperatures above 600 &deg;C to enable sufficient anion mobility, for $\mathrm{CO_3^{2-}}$ and $\mathrm{O^{2-}}$, respectively. These temperatures enable significant fuel flexibility without need for an external reformer and facilitates both the fuel oxidation and oxygen reduction reactions; however, system component longevity is a persistent problem at these elevated temperatures. Additionally, cyclic usage patterns result in thermal cycling that requires careful matching of thermal expansion coefficients for seals, anode, cathode, electrolyte, casing, etc., which severely limits materials options for these components. Finally, at these temperatures, heat loss varies inversely with system size. These constraints make high temperature fuel cells less attractive for portable applications.</p>
-<p>At an operating temperature of 150-200 &deg;C, phosphoric acid fuel cells do not suffer from the same thermal management problems as high temperature fuel cells, but containing the highly corrosive electrolyte at elevated temperature limits longevity. To increase the capacity of these fuel cells by only 20% would require significant advancements in reducing anion adsorption at the low-index planes of the Pt catalyst <a href="http://www1.eere.energy.gov/hydrogenandfuelcells/pdfs/49072.pdf" title="Remick, R. &amp; Wheeler, D. Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis. NREL/TP-560-49072 1&#x2013;51 (2010). Accessed: 12 February 2015.">(Rimick2010a)</a>, <a href="http://dx.doi.org/10.1149/1.1526108" title="Mench, M. M. &amp; Wang, C. Y. An In Situ Method for Determination of Current Distribution in PEM Fuel Cells Applied to a Direct Methanol Fuel Cell. J. Electrochem. Soc. 150, A79 (2003)">(Mench2003)</a>.</p>
-<p>PEM operate below 100 &deg;C, which makes this class of fuel cells highly attractive for portable applications. The low temperature operation does limit both the chemical and mass transport kinetics, leading to appreciable polarization losses, but recent developments in membrane technology may significantly reduce both the mass transport polarization and the reduced operating potential that results from fuel crossover <a href="http://jes.ecsdl.org/cgi/doi/10.1149/2.008311jes" title="Tateishi, H. et al. Graphene Oxide Fuel Cell. J. Electrochem. Soc. 160, F1175&#x2013;F1178 (2013).">(Tateishi2013)</a>. Furthermore, the low operating temperature miminizes thermal management concerns for portable applications, and reduces thermal energy losses associated with operation cycling.</p>
+<h2 id="fuel-cell">Fuel Cell</h2>
+<p>The scalability of fuel cells decouples power and energy capacity, and enables use of fuels with very high energy densities, as compared to exisiting electrochemical energy storage options.</p>
+<p>The first reported fuel cell dates back to work by W.R. Grove in 1838 <a href="https://archive.org/details/londonedinburghp13lond" title="Grove, W. R. A New Voltaic Combination. London Edinburgh Philos. Mag. J. Sci. 13, 430&#8211;431 (1838).">(Grove1838)</a>, who a year later, introduces platinum to catalyze the hydrogen oxidation and oxygen reduction reactions <a href="https://archive.org/details/londonedinburghp143lond" title="Grove, W. R. Voltaic Series and the Combination of Gases by Platinum. London Edinburgh Philos. Mag. J. Sci. 14, 127&#8211;130 (1839).">(Grove1839)</a>.</p>
+<p>Since then, many fuel cell technologies have been developed, and are frequently categorized by their electrolyte, e.g. PEM (proton exchange membrane, or polymer electrolyte membrane), phosphoric acid, molten carbonate, and solid oxide fuel. Practically, these may also be classified by their respective operating temperatures.</p>
+<p>Molten carbonate and solid oxide fuel cells require temperatures above 600 &#176;C to enable sufficient anion mobility, $\mathrm{CO_3^{2-}}$ and $\mathrm{O^{2-}}$, respectively. These temperatures enable significant fuel flexibility without need for an external reformer and facilitates both the fuel oxidation and oxygen reduction reactions; however, system component longevity is a persistent problem at these elevated temperatures. Additionally, cyclic usage patterns result in thermal cycling that requires careful matching of thermal expansion coefficients for both structural and active components, e.g. seals, electrodes, casing, etc. This constraint severely limits materials options for these components. Additionally, heat loss varies inversely with system size, and cogeneration facilities that make use of waste heat are cumbersome to integrate into compact, mobile systems. These constraints make high temperature fuel cells less attractive for portable applications.</p>
+<p>At an operating temperature of 150-200 &#176;C, phosphoric acid fuel cells do not suffer from the same thermal management problems as high temperature fuel cells, but containing the highly corrosive electrolyte at elevated temperature similarly limits longevity and poses a safety concern in a consumer device. Furthermore, to increase the capacity of these fuel cells by only 20% would require significant advancements in reducing anion adsorption at the low-index planes of the Pt catalyst <a href="http://www1.eere.energy.gov/hydrogenandfuelcells/pdfs/49072.pdf" title="Remick, R. &amp; Wheeler, D. Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis. NREL/TP-560-49072 1&#8211;51 (2010). Accessed: 12 February 2015.">(Rimick2010a)</a>, <a href="http://dx.doi.org/10.1149/1.1526108" title="Mench, M. M. &amp; Wang, C. Y. An In Situ Method for Determination of Current Distribution in PEM Fuel Cells Applied to a Direct Methanol Fuel Cell. J. Electrochem. Soc. 150, A79 (2003)">(Mench2003)</a>.</p>
+<p>PEM operate below 100 &#176;C, which makes this class of fuel cells highly attractive for portable applications. The low temperature operation does limit both the chemical and mass transport kinetics, leading to appreciable polarization losses, but recent developments in membrane technology may significantly reduce both the mass transport polarization and the reduced operating potential that results from fuel crossover <a href="http://jes.ecsdl.org/cgi/doi/10.1149/2.008311jes" title="Tateishi, H. et al. Graphene Oxide Fuel Cell. J. Electrochem. Soc. 160, F1175&#8211;F1178 (2013).">(Tateishi2013)</a>. Furthermore, the low operating temperature minimizes thermal management concerns for portable applications, and reduces thermal energy losses associated with operation cycling.</p>
 <p>Of the potential PEM fuels, compressed and liquid hydrogen have received significantly more attention.</p>
 <figure>
   <a href="fig/publication_count.png">
-      <img src="/Users/bkappes/.Dropbox-work/Dropbox/proposals/ARPAE_HybridBFC/concept/fig/publication_count.png" alt="publication count" height=360 width=480>
+      <img src="fig/publication_count.png" alt="publication count" width=480 height=360>
   </a>
   <figcaption>
-Number of publications that reference &quot;hydrogen fuel cell&quot; or &quot;direct alcohol methanol fuel cell&quot;, according to <em>scholar.google.com</em>. Accessed: 12 February 2015.
+Number of publications that reference "hydrogen fuel cell" or "direct alcohol methanol fuel cell", according to <i>scholar.google.com</i>. Accessed: 12 February 2015.
   </figcaption>
 </figure>
 
-<p>Unsurprisingly, then, hydrogen fuel cell technology is more developed; however, methanol has higher energy capacities <a href="http://books.google.com/books?hl=en&amp;lr=&amp;id=xHsJJieZlHwC&amp;oi=fnd&amp;pg=PA1&amp;dq=Direct+Methanol+Fuel+Cells+:+History+,+Status+and+Perspectives&amp;ots=iDVDBBaEl5&amp;sig=BtotK4fVYetE5w_cc2AigTz2Dnk" title="Aric&#xF2;, A., Baglio, V. &amp; Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009).">(Arico2009)</a>.</p>
+
+<p>Despite over a century of additional research and a more extensive track record of recent investigation, hydrogen fuel cells still share many of the same barriers to commercialization as direct methanol, but methanol is more easily stored, can, unlike hydrogen, be readily integrated into the existing liquid fuels distribution infrastructure, and has notably higher energy capacities.</p>
 <table>
-    <tr>
-        <th>Fuel</th>
-        <th>Energy Density<br>(Wh/L)</th>
-        <th>Specific Energy<br>(Wh/kg)</th>
-    </tr>
-    <tr>
-        <td>Methanol</td>
-        <td>3228 - 3976</td>
-        <td>5390 - 7122</td>
-    </tr>
-    <tr>
-        <td>hydrogen<br>(metal hydride)</td>
-        <td>1532 - 2339</td>
-        <td>374 - 635</td>
-    </tr>
-    <tr>
-        <td>hydrogen<br>(cryogenic liquid)</td>
-        <td>1839 - 2317</td>
-        <td>25,316 - 33,172</td>
-    </tr>
+  <caption>
+    Energy capacities of methanol and hydrogen, from <a href="http://books.google.com/books?hl=en&amp;lr=&amp;id=xHsJJieZlHwC&amp;oi=fnd&amp;pg=PA1&amp;dq=Direct+Methanol+Fuel+Cells+:+History+,+Status+and+Perspectives&amp;ots=iDVDBBaEl5&amp;sig=BtotK4fVYetE5w_cc2AigTz2Dnk" title="Aric&#242;, A., Baglio, V. &amp; Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009).">(Arico2009)</a>. Capacities for lithium ion batteries are presented for comparison (<i>ibid</i>).
+  </caption>
+  <tr>
+    <th>Fuel</th>
+    <th>Energy Density<br>(Wh/L)</th>
+    <th>Specific Energy<br>(Wh/kg)</th>
+  </tr>
+  <tr>
+    <td>Methanol</td>
+    <td>3228 &ndash; 3976</td>
+    <td>5390 &ndash; 7122</td>
+  </tr>
+  <tr>
+    <td>hydrogen<br>(metal hydride)</td>
+    <td>1532 &ndash; 2339</td>
+    <td>374 &ndash; 635</td>
+  </tr>
+  <tr>
+    <td>hydrogen<br>(cryogenic liquid)</td>
+    <td>1839 &ndash; 2317</td>
+    <td>25,316 &ndash; 33,172</td>
+  </tr>
+  <tr>
+    <td>Li-ion</td>
+    <td>256 &ndash; 394</td>
+    <td>86 &ndash; 147</td
+  </tr>
 </table>
 
-<p>Although liquid hydrogen provides the largest gravimetric capacity, this is overshadowed by the balance of plant structures required for cryogenic storage (reference?). Methanol has a 75.5% higher energy density than cryogenic hydrogen and a negligible intrinsic requirement for fuel storage.</p>
-<p>Existing manufacturing, distribution, and point-of-sale infrastructure can be easily, and incrementally, converted from gasoline/diesel to methanol. Hydrogen could not.</p>
+
+<p>While in portable applications both weight and volume are important considerations, reducing system volume is more important than weight; and although liquid hydrogen provides a 4.6-fold increase in gravimetric capacity, methanol has a 75.5% higher volumetric capacity than cryogenic hydrogen.</p>
 <p>Currently, methanol is produced predominantly by steam reforming methane. However unlike other higher order alcohols, technologies exist at a sufficient technological readiness level for the commercial production of methanol from biomass.</p>
 <blockquote>
-<p>&quot;While natural gas is most often used in the global economy, methanol has the distinct advantage of &#39;polygeneration&#39; - whereby methanol can be made from any resource that can be converted first into synthesis gas. Through gasification, synthesis gas can be produced from anything that is or ever was a plant.  This includes biomass, agricultural and timber waste, solid municipal waste, and a number of other feedstocks.&quot;</p>
+<p>&quot;While natural gas is most often used in the global economy, methanol has the distinct advantage of 'polygeneration' - whereby methanol can be made from any resource that can be converted first into synthesis gas. Through gasification, synthesis gas can be produced from anything that is or ever was a plant. This includes biomass, agricultural and timber waste, solid municipal waste, and a number of other feedstocks.&quot;</p>
 </blockquote>
-<p><a href="http://www.methanol.org/methanol-basics/overview/how-is-methanol-made-.aspx">methanol.org</a>, Accessed: 12 February 2015</p>
-<p>Thus, the use of methanol would result in the closed cycle production, distribution, and reclamation of carbon, resulting in a carbon-neutral, renewable fuel source.</p>
+<div align="right">
+  <a href="http://www.methanol.org/methanol-basics/overview/how-is-methanol-made-.aspx" title="Methanol Institute">Methanol Institute</a>, Accessed: 12 February 2015
+</div>
+
+
+<p>Thus, the use of methanol could result in the closed cycle production, distribution, and reclamation of carbon, resulting in a carbon-neutral, renewable fuel source.</p>
 <p>For these reasons, this work will focus on the integration of direct methanol fuel cells as the power generator.</p>
-<h3 id="batteries">Batteries</h3>
+<h2 id="batteries">Batteries</h2>
 <p>There are many energy storage options: lithium ion, magnesium ion, redox flow, supercapacitors. (Expand discussion on the down selection from these to lithium ion batteries.)</p>
-<p>With volumetric energy densities between 256 and 394 Wh/L and specific energies between 86 and 147 Wh/kg <a href="http://books.google.com/books?hl=en&amp;lr=&amp;id=xHsJJieZlHwC&amp;oi=fnd&amp;pg=PA1&amp;dq=Direct+Methanol+Fuel+Cells+:+History+,+Status+and+Perspectives&amp;ots=iDVDBBaEl5&amp;sig=BtotK4fVYetE5w_cc2AigTz2Dnk" title="Aric&#xF2;, A., Baglio, V. &amp; Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009).">(Arico2009)</a>, lithium ion batteries have energy capacities and kinetics sufficient to handle fluctuations in power demands.</p>
+<p>With volumetric energy densities between 256 and 394 Wh/L and specific energies between 86 and 147 Wh/kg <a href="http://books.google.com/books?hl=en&amp;lr=&amp;id=xHsJJieZlHwC&amp;oi=fnd&amp;pg=PA1&amp;dq=Direct+Methanol+Fuel+Cells+:+History+,+Status+and+Perspectives&amp;ots=iDVDBBaEl5&amp;sig=BtotK4fVYetE5w_cc2AigTz2Dnk" title="Aric&#242;, A., Baglio, V. &amp; Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009).">(Arico2009)</a>, lithium ion batteries have energy capacities and kinetics sufficient to handle fluctuations in power demands.</p>
 <p>The use of liquid electrolytes in lithium ion battery chemistries increases the complexity of battery design and are involved in numerous unsafe redox reactions, particularly at overcharged and undercharged conditions. Solid state lithium ion batteries do not suffer from operational limitations that plague these chemistries.</p>
 <p>A hybrid power systems ensures the battery remain within the broad window for optimal battery performance.</p>
 <p>For these reasons, this work will focus on integration of solid state lithium ion batteries as the power storage medium.</p>
-<h3 id="conclusion">Conclusion</h3>
-<p>A fuel cell-electrochemical energy storage hybrid power system is not a new concept, e.g. <a href="http://dx.doi.org/10.1109/VPPC.2011.6043246" title="Gauchia, L., Bouscayrol, a., Sanz, J., Trigui, R. &amp; Barrade, P. Fuel cell, battery and supercapacitor hybrid system for electric vehicle: Modeling and control via energetic macroscopic representation. 2011 IEEE Veh. Power Propuls. Conf. 1&#x2013;6 (2011).">(Glauchia2011)</a>; they have been incorporated into concept vehicles produced by several automobile manufacturers, and in May 2008, <a href="http://www.boeing.com/news/frontiers/archive/2008/may/ts_sf04.pdf" title="Koehler, T. Boeing makes history with flights of Fuel Cell Demonstrator Airplane, Boeing Frontiers (May 2008) 44. Accessed 12 February 2015">Boeing reported</a> on the successful test flight of the Demonstrator Airplane, which combined a proton exchange membrane fuel cell system <em>-- used to power the aircraft at a cruise speed of 60 mph --(drop?)</em> with a lightweight battery that provided additional power for takeoff. Commercial hybrid power systems have a place, but these examples show that prohibitive limitations persist in battery/hydrogen fuel cell systems, prompting our proposed move to methanol.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>A fuel cell-electrochemical energy storage hybrid power system is not a new concept, e.g. <a href="http://dx.doi.org/10.1109/VPPC.2011.6043246" title="Gauchia, L., Bouscayrol, a., Sanz, J., Trigui, R. &amp; Barrade, P. Fuel cell, battery and supercapacitor hybrid system for electric vehicle: Modeling and control via energetic macroscopic representation. 2011 IEEE Veh. Power Propuls. Conf. 1&#8211;6 (2011).">(Glauchia2011)</a>; they have been incorporated into concept vehicles produced by several automobile manufacturers, and in May 2008, <a href="http://www.boeing.com/news/frontiers/archive/2008/may/ts_sf04.pdf" title="Koehler, T. Boeing makes history with flights of Fuel Cell Demonstrator Airplane, Boeing Frontiers (May 2008) 44. Accessed 12 February 2015">Boeing reported</a> on the successful test flight of the Demonstrator Airplane, which combined a proton exchange membrane fuel cell system <em>-- used to power the aircraft at a cruise speed of 60 mph --(drop?)</em> with a lightweight battery that provided additional power for takeoff. Commercial hybrid power systems have a place, but these examples show that prohibitive limitations persist in battery/hydrogen fuel cell systems, prompting our proposed move to methanol.</p>
 <p>This project will leverage recent advancements in membrane and catalyst technology to increase the performance of direct methanol fuel cells; advance solid state lithium ion battery systems to lower battery weight, improve safety, and exploit the capacity multiplier effect of a hybrid system; and finally, advance the technological readiness level of this technology toward commercialization.</p>
-<h3 id="personnel">Personnel</h3>
-<h3 id="references">References</h3>
-<p><a href="http://books.google.com/books?hl=en&amp;lr=&amp;id=xHsJJieZlHwC&amp;oi=fnd&amp;pg=PA1&amp;dq=Direct+Methanol+Fuel+Cells+:+History+,+Status+and+Perspectives&amp;ots=iDVDBBaEl5&amp;sig=BtotK4fVYetE5w_cc2AigTz2Dnk" title="Aric&#xF2;, A., Baglio, V. &amp; Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009).">Aric&ograve;, A., Baglio, V. &amp; Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009).</a></p>
+<h2 id="personnel">Personnel</h2>
+<p>Dr. Branden Kappes (Lead) holds a Research Assistant Professor appointment at the Colorado School of Mines and, as VP of Technology at Process Group International (PGI), is responsible for research, development, and manufacture of their direct methanol fuel cell line. His work at the Colorado School of Mines focuses on high-throughput computational modeling of chemical and materials systems for electrochemical energy storage.</p>
+<p>Dr. Chunmei Ban &#8230; battery system</p>
+<p>Dr. Steven Christensen &#8230; characterization</p>
+<p>Dr. Cristian Ciobanu &#8230; system-level modeling</p>
+<p>Dr. Katherine Hurst &#8230; synthesis</p>
+<h2 id="references">References</h2>
+<p><a href="http://books.google.com/books?hl=en&amp;lr=&amp;id=xHsJJieZlHwC&amp;oi=fnd&amp;pg=PA1&amp;dq=Direct+Methanol+Fuel+Cells+:+History+,+Status+and+Perspectives&amp;ots=iDVDBBaEl5&amp;sig=BtotK4fVYetE5w_cc2AigTz2Dnk" title="Aric&#242;, A., Baglio, V. &amp; Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009).">Aric&#242;, A., Baglio, V. &amp; Antonucci, V. in Electrocatal. Direct Methanol Fuel Cells 1-78 (2009).</a></p>
 <p><a href="http://www.boeing.com/news/frontiers/archive/2008/may/ts_sf04.pdf" title="Koehler, T. Boeing makes history with flights of Fuel Cell Demonstrator Airplane, Boeing Frontiers (May 2008) 44. Accessed 12 February 2015">Koehler, T. Boeing makes history with flights of Fuel Cell Demonstrator Airplane, Boeing Frontiers (May 2008) 44. Accessed 12 February 2015</a></p>
-<p><a href="http://dx.doi.org/10.1109/VPPC.2011.6043246" title="Gauchia, L., Bouscayrol, a., Sanz, J., Trigui, R. &amp; Barrade, P. Fuel cell, battery and supercapacitor hybrid system for electric vehicle: Modeling and control via energetic macroscopic representation. 2011 IEEE Veh. Power Propuls. Conf. 1&#x2013;6 (2011).">Gauchia, L., Bouscayrol, a., Sanz, J., Trigui, R. &amp; Barrade, P. Fuel cell, battery and supercapacitor hybrid system for electric vehicle: Modeling and control via energetic macroscopic representation. 2011 IEEE Veh. Power Propuls. Conf. 1–6 (2011).</a></p>
-<p><a href="https://archive.org/details/londonedinburghp13lond" title="Grove, W. R. A New Voltaic Combination. London Edinburgh Philos. Mag. J. Sci. 13, 430&#x2013;431 (1838).">Grove, W. R. A New Voltaic Combination. London Edinburgh Philos. Mag. J. Sci. 13, 430–431 (1838).</a></p>
-<p><a href="https://archive.org/details/londonedinburghp143lond" title="Grove, W. R. Voltaic Series and the Combination of Gases by Platinum. London Edinburgh Philos. Mag. J. Sci. 14, 127&#x2013;130 (1839).">Grove, W. R. Voltaic Series and the Combination of Gases by Platinum. London Edinburgh Philos. Mag. J. Sci. 14, 127–130 (1839).</a></p>
+<p><a href="http://dx.doi.org/10.1109/VPPC.2011.6043246" title="Gauchia, L., Bouscayrol, a., Sanz, J., Trigui, R. &amp; Barrade, P. Fuel cell, battery and supercapacitor hybrid system for electric vehicle: Modeling and control via energetic macroscopic representation. 2011 IEEE Veh. Power Propuls. Conf. 1&#8211;6 (2011).">Gauchia, L., Bouscayrol, a., Sanz, J., Trigui, R. &amp; Barrade, P. Fuel cell, battery and supercapacitor hybrid system for electric vehicle: Modeling and control via energetic macroscopic representation. 2011 IEEE Veh. Power Propuls. Conf. 1&#8211;6 (2011).</a></p>
+<p><a href="https://archive.org/details/londonedinburghp13lond" title="Grove, W. R. A New Voltaic Combination. London Edinburgh Philos. Mag. J. Sci. 13, 430&#8211;431 (1838).">Grove, W. R. A New Voltaic Combination. London Edinburgh Philos. Mag. J. Sci. 13, 430&#8211;431 (1838).</a></p>
+<p><a href="https://archive.org/details/londonedinburghp143lond" title="Grove, W. R. Voltaic Series and the Combination of Gases by Platinum. London Edinburgh Philos. Mag. J. Sci. 14, 127&#8211;130 (1839).">Grove, W. R. Voltaic Series and the Combination of Gases by Platinum. London Edinburgh Philos. Mag. J. Sci. 14, 127&#8211;130 (1839).</a></p>
 <p><a href="http://dx.doi.org/10.1149/1.1526108" title="Mench, M. M. &amp; Wang, C. Y. An In Situ Method for Determination of Current Distribution in PEM Fuel Cells Applied to a Direct Methanol Fuel Cell. J. Electrochem. Soc. 150, A79 (2003)">Mench, M. M. &amp; Wang, C. Y. An In Situ Method for Determination of Current Distribution in PEM Fuel Cells Applied to a Direct Methanol Fuel Cell. J. Electrochem. Soc. 150, A79 (2003)</a></p>
-<p><a href="http://www1.eere.energy.gov/hydrogenandfuelcells/pdfs/49072.pdf" title="Remick, R. &amp; Wheeler, D. Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis. NREL/TP-560-49072 1&#x2013;51 (2010). Accessed: 12 February 2015.">Remick, R. &amp; Wheeler, D. Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis. NREL/TP-560-49072 1–51 (2010). Accessed: 12 February 2015.</a></p>
-<p><a href="http://jes.ecsdl.org/cgi/doi/10.1149/2.008311jes" title="Tateishi, H. et al. Graphene Oxide Fuel Cell. J. Electrochem. Soc. 160, F1175&#x2013;F1178 (2013).">Tateishi, H. et al. Graphene Oxide Fuel Cell. J. Electrochem. Soc. 160, F1175–F1178 (2013).</a></p>
+<p><a href="http://www1.eere.energy.gov/hydrogenandfuelcells/pdfs/49072.pdf" title="Remick, R. &amp; Wheeler, D. Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis. NREL/TP-560-49072 1&#8211;51 (2010). Accessed: 12 February 2015.">Remick, R. &amp; Wheeler, D. Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis Molten Carbonate and Phosphoric Acid Stationary Fuel Cells : Overview and Gap Analysis. NREL/TP-560-49072 1&#8211;51 (2010). Accessed: 12 February 2015.</a></p>
+<p><a href="http://jes.ecsdl.org/cgi/doi/10.1149/2.008311jes" title="Tateishi, H. et al. Graphene Oxide Fuel Cell. J. Electrochem. Soc. 160, F1175&#8211;F1178 (2013).">Tateishi, H. et al. Graphene Oxide Fuel Cell. J. Electrochem. Soc. 160, F1175&#8211;F1178 (2013).</a></p>
 <h1 id="notes">Notes</h1>
-<h2 id="lit-notes">Lit. Notes</h2>
+<ul>
+<li>impact -- <em>disruptive</em><br /></li>
+<li>figure<br /></li>
+<li>methanol economy better than hydrogen<br /></li>
+<li>incremental market introduction<br /></li>
+<li>target energy density (volumetric &amp; gravimetric)<br /></li>
+<li>address $\mathrm{CO_2}$</li>
+</ul>
+<h2 id="task-assignment">Task assignment</h2>
+<ul>
+<li>manufacturing: PGI<br /></li>
+<li>battery development/selection: Chunmei<br /></li>
+<li>Stabilize Pt:Ru catalyst: Steve<br /></li>
+<li>Methanol concentration/crossover (MEA): Branden</li>
+</ul>
+<h2 id="lit.-notes">Lit. Notes</h2>
 <ol>
-<li><p>Methanol as a renewable fuel source: Liu2006; Wasmus and Kuver, J. Electroanal. Chem 461 (1999) 14-31; Arico, et al., Fuel Cells 2 (2001) 133-161</p>
-</li>
-<li><p>Methanol electrooxidation steps: (1) methanol adsorption, (2) C--H activation (methanol dissociation), (3) water adsorption, (4) water activation, (5) CO oxidation; Lemy, Leger, and Srinivasan, Modern Aspects of Electrochem 34 (2001) 53-118</p>
-</li>
-<li><p>Mench2003, ORR is the limiting reaction, how significantly? Other papers state that the anode catalyst is the limiting factor -- perhaps longevity? -- which stands in opposition to this assertion.</p>
-</li>
-<li><p>Burke2007: simulations show hybrid hydrogen FC/battery-or-supercap EVs have 2-3 times the fuel economy of gasoline IC and 1.66-2x than gas-electric hybrids. NREL Advisor program? INEL SIMPLEV program for FC/batt hybrid.</p>
-</li>
-<li><p>Shimozu2004: Directly on point, passive DMFC operating at room temperature, but performance metrics are not ideal, and demonstrate the narrow window of optimal FC operation.</p>
-</li>
-<li><p>Gauchia2011: hydrogen FC/electrochemical storage concept. Directly on point. This work shows a model of a hybrid system, but uses the FC to directly power the vehicle. Our device separates the FC from the system power requirements, thus ensuring better control over battery SOC and fuel cell operating conditions.</p>
-</li>
-<li><p>Feng2013: catalyst particle dispersion and support are important inf electrochem. performance.</p>
-</li>
-<li><p>Zheng2012: MEA production and catalyst loading are the two outstanding challenges that impede commercialization of DMFC.</p>
-</li>
-<li><p>Joghee2012: Nitrogenation of MEA stabilizes Pt:Ru catalyst.</p>
-</li>
-<li><p>Tateishi2013: GO-only fuel cell membrane. Low temperature &lt;28 C and very low power densities, energy densities and high polarization.</p>
-</li>
+<li><p>Methanol as a renewable fuel source: Liu2006; Wasmus and Kuver, J. Electroanal. Chem 461 (1999) 14-31; Arico, et al., Fuel Cells 2 (2001) 133-161</p></li>
+<li><p>Methanol electrooxidation steps: (1) methanol adsorption, (2) C--H activation (methanol dissociation), (3) water adsorption, (4) water activation, (5) CO oxidation; Lemy, Leger, and Srinivasan, Modern Aspects of Electrochem 34 (2001) 53-118</p></li>
+<li><p>Mench2003, ORR is the limiting reaction, how significantly? Other papers state that the anode catalyst is the limiting factor -- perhaps longevity? -- which stands in opposition to this assertion.</p></li>
+<li><p>Burke2007: simulations show hybrid hydrogen FC/battery-or-supercap EVs have 2-3 times the fuel economy of gasoline IC and 1.66-2x than gas-electric hybrids. NREL Advisor program? INEL SIMPLEV program for FC/batt hybrid.</p></li>
+<li><p>Shimozu2004: Directly on point, passive DMFC operating at room temperature, but performance metrics are not ideal, and demonstrate the narrow window of optimal FC operation.</p></li>
+<li><p>Gauchia2011: hydrogen FC/electrochemical storage concept. Directly on point. This work shows a model of a hybrid system, but uses the FC to directly power the vehicle. Our device separates the FC from the system power requirements, thus ensuring better control over battery SOC and fuel cell operating conditions.</p></li>
+<li><p>Feng2013: catalyst particle dispersion and support are important inf electrochem. performance.</p></li>
+<li><p>Zheng2012: MEA production and catalyst loading are the two outstanding challenges that impede commercialization of DMFC.</p></li>
+<li><p>Joghee2012: Nitrogenation of MEA stabilizes Pt:Ru catalyst.</p></li>
+<li><p>Tateishi2013: GO-only fuel cell membrane. Low temperature &lt;28 C and very low power densities, energy densities and high polarization.</p></li>
 </ol>
 <h2 id="benefits">Benefits</h2>
 <p>A hybrid system allows the strengths of one component to balance the weaknesses of the other, e.g.</p>
 <ol>
-<li><p>developments in energy storage (battery), energy production (fuel cell), methanol production and distribution -- and to a lesser degree, DC power electronics -- provide independent pathways to system improvement and incorporation.</p>
-</li>
-<li><p>methanol distribution can be incorporated into existing infrastructure with minimal effort. This allows methanol production and distribution to be ramped up incrementally.</p>
-</li>
+<li><p>developments in energy storage (battery), energy production (fuel cell), methanol production and distribution -- and to a lesser degree, DC power electronics -- provide independent pathways to system improvement and incorporation.</p></li>
+<li><p>methanol distribution can be incorporated into existing infrastructure with minimal effort. This allows methanol production and distribution to be ramped up incrementally.</p></li>
 </ol>
 <h3 id="dmfc">DMFC</h3>
 <ul>
-<li>extensible energy capacity</li>
-<li>high energy density (volumetric and gravimetric) than lithium ion
-  hydrogen.</li>
-<li>existing potential for a closed carbon cycle fuel</li>
-<li>excellent scalability</li>
+<li>extensible energy capacity<br /></li>
+<li>high energy density (volumetric and gravimetric) than lithium ion<br />hydrogen.<br /></li>
+<li>existing potential for a closed carbon cycle fuel<br /></li>
+<li>excellent scalability<br /></li>
 <li>excellent cell-to-cell consistency</li>
 </ul>
 <h3 id="batt">Batt</h3>
 <ul>
-<li>rapid power response (kinetics)</li>
+<li>rapid power response (kinetics)<br /></li>
 <li>medium capacity (SC &lt; Batt &lt; DMFC)</li>
 </ul>
 <p>Several technical challenges prevent immediate implementation of a HBFC...</p>
 <h2 id="technical-challenges">Technical Challenges</h2>
-<h3 id="dmfc">DMFC</h3>
+<h3 id="dmfc-1">DMFC</h3>
 <ul>
-<li>poor kinetics</li>
-<li>catalyst stability (anode)</li>
-<li>crossover current<ul>
-<li>electromigration</li>
-<li>diffusion</li>
-</ul>
-</li>
-<li>polarization<ul>
-<li>Ohmic</li>
-<li>electrochemical</li>
-<li>catalytic</li>
-</ul>
-</li>
-<li>$\mathrm{H_2O}$ management</li>
-<li>DC electronics require $V &gt; 1~V$</li>
+<li>poor kinetics<br /></li>
+<li>catalyst stability (anode)<br /></li>
+<li><p>crossover current</p>
+<ul>
+<li>electromigration<br /></li>
+<li>diffusion<br /></li>
+</ul></li>
+<li><p>polarization</p>
+<ul>
+<li>Ohmic<br /></li>
+<li>electrochemical<br /></li>
+<li>catalytic<br /></li>
+</ul></li>
+<li>$\mathrm{H_2O}$ management<br /></li>
+<li><p>DC electronics require $V &gt; 1~V$</p></li>
 </ul>
 <h3 id="battery">Battery</h3>
 <ul>
-<li>limited energy storage capacity</li>
+<li>limited energy storage capacity<br /></li>
 <li>poor operating range (T, state of charge -- charge window)</li>
 </ul>
